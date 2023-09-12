@@ -1,0 +1,4 @@
+"0","# Get more information about the mean() command using ? operator"
+"0",""
+"0","?mean"
+"0","knitr::include_graphics(""arithmeticmean.PNG"")"
