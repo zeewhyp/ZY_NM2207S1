@@ -1,0 +1,17 @@
+---
+title: "Code-Along-8"
+author: "Phua Zong Yao"
+date: "2023-10-09"
+output: html_document
+---
+
+```{r,echo=F}
+knitr::include_graphics("challenge8d.png")
+```
+
+&nbsp;
+
+
+```{r,echo=F}
+knitr::include_graphics("challenge8panel.png")
+```
