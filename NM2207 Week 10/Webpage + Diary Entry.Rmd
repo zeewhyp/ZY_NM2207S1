@@ -1,0 +1,56 @@
+---
+title: "Webpage + Diary Entry"
+author: "Phua Zong Yao"
+date: "2023-10-19"
+output: html_document
+---
+
+# WEEK 9
+
+
+# 1. What is the topic that you have finalized? (Answer in 1 or 2 sentences)
+
+The topic that I have finalized is social media in Singapore. 
+
+# 2. What are the data sources that you have curated so far? (Answer in 1 or 2 sentences)
+
+I have made use of one of the data sources provided in the examples list. It is a Statista dataset with information on Social Media usage rates, patterns and the overall number of users. I decided to use this source as it contains many graphs and tables, and covers a wide range of data. The link is below.
+
+https://www-statista-com.libproxy1.nus.edu.sg/study/63698/social-media-in-singapore/
+
+
+# WEEK 10 
+
+
+# 1. What is the question that you are going to answer? (Answer: One sentence that ends with a question mark that could act like the title of your data story),
+
+How has social media usage evolved over the past decade in Singapore, and what are the key trends influencing these changes? 
+
+# 2. Why is this an important question? (Answer: 3 sentences, each of which has some evidence, e.g., “According to the United Nations...” to justify why the question you have chosen is important),
+
+It helps to provide marketers and businesses with important insights about where their target audience spends their time online, which platforms are gaining or losing popularity, and how to effectively engage with potential customers. 
+
+It allows us to study the impact of social media on mental health and overall well-being. Identifying trends in social media usage can help mental health organisations and professionals better address the challenges that may be associated with excessive social media use. 
+
+Investigating trends in social media usage helps us to identify potential privacy and security concerns. As the way people use social media evolves, so do the associated risks and vulnerabilities. 
+
+# 3. Which rows and columns of the dataset will be used to answer this question? (Answer: Actual names of the variables in the dataset that you plan to use).
+
+The first table I will use is 'The number of social media users in Singapore 2017-2028 (in millions)'. The row I will use will be the years (2017-2028) and the column I will use will be the number of users in millions. 
+
+The second table I will use is 'The social media penetration rate in Singapore 2019-2028'. The row I will use will be the years (2019-2028) and the column I will use will be the share of population (in %).
+
+The third table I will use is 'The average monthly hours spent per user on social media apps in Singapore from 2018 to 2021'. The row I will use will be the top 5 most popular social media platforms and the column I will use will be the average monthly hours per user.
+
+The fourth table I will use is 'The size of the social network advertising audience in Singapore as of Jan 2023, by platform (in millions)'. The row I will use will be various social media platforms and the column I will use will be the number of addressable users in millions. 
+
+The fifth table I will use is 'The gender distribution of the social network advertising audience in Singapore as of Jan 2022, by platform'. The row I will use will be various social media platforms and the column I will use will be gender (male/female). 
+
+The sixth table I will use is 'The average time spent using online media in Singapore in Q3 2022, by activity (in hours per day)'. The row I will use will be various online activities and the column I will use will be the average time in hours per day. 
+
+The seventh table I will use is 'The main reasons for using social media in Singapore in 2022'. The row I will use will be various reasons for using social media and the column I will use will be the share of respondents (in %). 
+
+
+Include the challenges and errors that you faced and how you overcame them.
+
+
