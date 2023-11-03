@@ -1,0 +1,16 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Week 11 Challenge",
+    "section": "",
+    "text": "── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.2     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.3     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter()  masks stats::filter()\n✖ purrr::flatten() masks jsonlite::flatten()\n✖ dplyr::lag()     masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\n#(a i) What is the population in various states of U.S.A?\n\n\n\n\n\n#(a ii) What fraction of the population was infected ?\n\n\n\n\n\n#(a iii) What fraction of infected persons recovered ?\n\n\n\n\n\n#(a iv) What fraction of the population is currently vaccinated ?\n\n\nWarning: Use of `data$population` is discouraged.\nℹ Use `population` instead.\n\n\nWarning: Removed 3 rows containing missing values (`position_stack()`).\n\n\n\n\n\n\n(a v) What was the transmission-like in the various states ?\n\n\n# A tibble: 6 × 6\n  Date       Alaska California New_Jersey Tennessee District_of_Columbia\n  &lt;chr&gt;       &lt;int&gt;      &lt;int&gt;      &lt;int&gt;     &lt;int&gt;                &lt;int&gt;\n1 2020-03-01      0          0          0         0                    0\n2 2020-03-02      0          0          0         0                    0\n3 2020-03-03      0          0          0         0                    0\n4 2020-03-04      0          0          0         0                    0\n5 2020-03-05      0          0          0         0                    0\n6 2020-03-06      0          0          0         0                    0\n\n\n\n\n\n\n\n(a vi) How did the disease progress since it started ?\n\n\nWarning: Removed 2 rows containing missing values (`geom_point()`).\nRemoved 2 rows containing missing values (`geom_point()`).\nRemoved 2 rows containing missing values (`geom_point()`).\nRemoved 2 rows containing missing values (`geom_point()`)."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  }
+]
