@@ -1,0 +1,34 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Social Media in Singapore"
+  back-to-top-navigation: true
+  search: false
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About Me
+
+page-footer:
+    border: true
+    background: secondary
+    left: 
+      - text: "Copyright © 2023 Phua Zong Yao"
+    right:
+    - text: This site is built with <a href="https://quarto.org/">Quarto</a> and <a href="https://www.rstudio.com/"><img src="https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-flat.svg" class="img-fluid" alt="RStudio" width="60"></a>.
+
+format:
+  html:
+    theme: pulse
+    css: styles.css
+    toc: false
+    page-layout: full
+    smooth-scroll: true
+    
+
+editor: visual
+

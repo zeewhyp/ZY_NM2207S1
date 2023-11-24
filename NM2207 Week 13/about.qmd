@@ -1,0 +1,31 @@
+---
+title: "About Me"
+---
+
+#### Below is the link to my GitHub profile.
+
+[Zong Yao's Github](https://github.com/zeewhyp/ZY_NM2207S1.git)
+
+#### Here is the link to my Telegram.
+
+[Zong Yao's Telegram](https://t.me/zeewhyp)
+
+![](images/self.jpg){width="214"}
+
+Hello! I am Zong Yao, currently a Year 2 Communications and New Media student in NUS. I have always been interested in learning new things, and was quite excited to take the [NM2207](https://nusmods.com/courses/NM2207/computational-media-literacy) module. In today's age, everything is becoming increasingly online, so picking up knowledge in this domain is always useful in my opinion. 
+
+Despite the relatively steep learning curve, I have enjoyed my time so far learning the R language for this module, and it is a welcome breath of fresh air from the usual essays and weekly readings. Going forward, I will continue to improve on my coding skills. After learning R, I hope to move on to Python and maybe even Javascript. I believe it will be useful for my future pursuits, and will complement my skill sets and my CNM knowledge. 
+
+Thanks for taking the time to explore my website. Feel free to reach out to me if you have any questions!
+
+#### **Education**
+
+National University of Singapore\
+Communications and New Media (CNM), Minor in Sociology \| 2022 - 2026
+
+Anderson Serangoon Junior College (ASRJC)\
+H2 (Chemistry,Mathematics,Economics), H1 (History, General Paper) \| 2018 - 2019
+
+#### **Hobbies**
+
+Football \| Basketball \| Solving Puzzles \| Travelling the World 

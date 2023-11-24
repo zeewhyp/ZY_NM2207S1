@@ -1,0 +1,634 @@
+---
+title: "Social Media in Singapore"
+output:
+  html_document:
+    df_print: paged
+    toc: true
+---
+
+```{r import libraries, echo=FALSE, warning=FALSE, message=FALSE}
+
+library(tidyverse)
+library(ggplot2)
+library(plotly)
+library(dplyr)
+library(readr)
+library(lubridate)
+library(stringr)
+library(ggthemes)
+library(extrafont)
+library(xfun)
+library(highcharter)
+library(shiny)
+  
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+knitr::include_graphics("images/fpmediaicon.jpg")
+
+```
+
+[Link to Social Media Image](https://www.freepik.com/free-vector/social-media-background-with-hand-drawn-elements_2330985.htm)
+
+
+# Introduction to the topic
+
+Over the past decade or so, Singapore has undergone a remarkable transformation in the realm of social media, becoming a dynamic landscape shaped by technological advancements, cultural shifts, and the ever-changing preferences to its digitally connected population. From the early days of simple status updates to the current era of immersive multimedia content, the journey of social media in Singapore reflects not only the evolution of technology but also the changing ways in which people communicate, connect, and consume information.
+
+In this data story, we will delve more into the intricate tapestry of social media usage in Singapore, unraveling the trends that have defined the past decade and beyond. Through a comprehensive analysis of data trends, user behavior, and platform dynamics, we aim to provide a nuanced understanding of how social media has evolved and what forces have been instrumental in steering its course. From the rise of new platforms to the impact of global events, the story of social media in Singapore is one that intertwines with the broader narrative of our digital age.
+
+As we unravel the intricacies of this digital evolution, we seek to answer the fundamental question: How has social media usage transformed, and what are the key trends influencing these changes in the Lion City?
+
+# Number of Social Media Users in Singapore
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+# Picture 1 
+
+godly <- read.csv("NM2207pd.csv")
+
+# Your data
+data_users <- data.frame(
+  Year = c(2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028),
+  Users = c(4.43, 4.75, 4.89, 5.14, 5.33, 5.51, 5.67, 5.81, 5.95, 6.06, 6.11, 6.15)
+)
+
+# Create the interactive line chart with plot_ly
+plot_ly(data_users, x = ~Year, y = ~Users, type = "scatter", mode = "lines+markers", line = list(color = "red")) %>%
+  layout(
+    title = "Number of Social Media Users in Singapore",
+    xaxis = list(
+      title = "Year",
+      tickmode = "linear",
+      dtick = 1
+    ),
+    yaxis = list(
+      title = "Number of Users (in millions)"
+    )
+  ) %>%
+  config(displayModeBar = FALSE)
+
+```
+
+Now let us take a look at some of the data. The graph above references the number of social media users in Singapore from 2017-2028. Let's see some possible deductions we might be able to make based on this information. 
+
+### Consistent Growth 
+
+The data reveals a consistent upward trajectory in the number of social media users in Singapore, starting at 4.43 million in 2017 and reaching 6.15 million in 2028. This growth highlights the enduring popularity and influence of social media platforms within the country.
+
+### Gradual Acceleration 
+
+While the growth is steady, there is a noticeable acceleration in user numbers from 2019 onwards. This period reflects an increased adoption of social media, potentially influenced by technological advancements, improved connectivity, and evolving user behaviors.
+
+### Stable Momentum 
+
+The annual increments in user numbers remain relatively stable, indicating a sustained momentum in social media adoption. This stability suggests that social media has become an integral part of the digital fabric in Singapore, with a consistently expanding user base.
+
+### Emergence of New Platforms 
+
+The growth in user numbers may be attributed to the emergence of new and innovative social media platforms. The data invites further exploration into the introduction and popularity of specific platforms, contributing to the overall growth trend.
+
+### Conclusion 
+
+The data paints a compelling picture of social media evolution in Singapore, characterized by consistent growth, gradual acceleration, and the emergence of new platforms. As the nation moves into the late 2020s, social media's influence is expected to remain a prominent aspect of Singaporean society, shaping communication, connectivity, and the way individuals engage with information and each other.
+
+# Social Media Penetration Rate in Singapore
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+# Picture 2 
+
+# Your data
+data_penetration <- data.frame(
+  Year = c(2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028),
+  Penetration_Rate = c(84.25, 87.92, 90.37, 92.63, 94.61, 96.33, 97.85, 99.09, 99.17, 99.24)
+)
+
+# Create the interactive line chart with plot_ly
+plot_ly(data_penetration, x = ~Year, y = ~Penetration_Rate, type = "scatter", mode = "lines+markers", line = list(color = "orange")) %>%
+  layout(title = "Social Media Penetration Rate in Singapore",
+         xaxis = list(title = "Year", categoryorder = "trace", tickmode = "linear", dtick = 1),
+         yaxis = list(title = "Penetration Rate (%)"),
+         scale_x_continuous(breaks = seq(2019, 2028, by = 1)
+         )
+  ) %>%
+  config(displayModeBar = FALSE)
+
+```
+
+The graph above references the social media penetration rate in Singapore from 2017-2028. Let’s see some possible deductions we might be able to make based on this information.
+
+### Remarkable Ascension 
+
+The social media penetration rate in Singapore has witnessed a remarkable ascent over the past decade, starting at 84.25% in 2019 and soaring to an impressive 99.24% in 2028. This upward trend underscores the widespread adoption and integration of social media into the fabric of Singaporean society.
+
+### Acceleration in Adoption 
+The rate of penetration exhibits a noticeable acceleration, with the steepest increase occurring between 2019 and 2023. This period reflects a rapid adoption of social media platforms, potentially driven by factors such as increased internet accessibility, technological advancements, and shifting social behaviors.
+
+### Near Saturation Point (2028) 
+
+By 2028, the penetration rate has reached an astonishing 99.24%, signaling that social media has almost reached a saturation point in Singapore. This suggests that the vast majority of the population is actively engaged with social media platforms, creating a highly connected digital landscape.
+
+### Implications for Businesses and Marketers
+
+With a penetration rate of 99.24%, businesses and marketers can potentially reach almost the entire population through social media channels. However, it also implies that competition for user attention will be intense, requiring more sophisticated and targeted strategies to stand out in a saturated market.
+
+### Diversification of Platforms
+
+With such high penetration, it's interesting to explore which specific social media platforms are contributing to this growth. Different demographics may favor different platforms, and understanding these preferences can be crucial for businesses tailoring their marketing strategies.
+
+### Potential Challenges
+
+While high penetration is generally positive for businesses, it also presents challenges such as potential user fatigue, privacy concerns, and the need for platforms to continuously innovate to retain users.
+
+### Integration of Social Media in Daily Life
+
+The high penetration rate suggests that social media has become deeply integrated into the daily lives of Singaporeans. This could have social, cultural, and economic implications, influencing how people communicate, consume information, and make purchasing decisions.
+
+### Conclusion
+
+The data on social media penetration rates in Singapore indicates a nearly universal adoption of social media. While this presents significant opportunities for businesses, it also poses challenges related to saturation and evolving user expectations. Further exploration into user behavior and preferences can provide valuable insights for businesses and policymakers in navigating the dynamic landscape of social media in Singapore.
+
+# Social Network Advertising Audience in Singapore
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+# Picture 4
+
+data_advertising <- data.frame(
+  Social_Platform = c("Twitter", "YouTube", "LinkedIn", "Facebook", "Instagram", "TikTok", "Facebook Messenger", "Snapchat"),
+  Audience_Millions = c(5.50, 5.08, 3.70, 3.30, 2.70, 2.39, 1.95, 1.45)
+)
+
+# Sort in ascending order
+data_advertising$Social_Platform <- factor(data_advertising$Social_Platform, levels = data_advertising$Social_Platform[order(data_advertising$Audience_Millions)])
+
+# Create the interactive horizontal bar chart with plot_ly
+plot_ly(data_advertising, x = ~Audience_Millions, y = ~Social_Platform, type = "bar", orientation = 'h', marker = list(color = "#D291BC")) %>%
+  layout(title = "Social Network Advertising Audience in Singapore",
+         xaxis = list(title = "Advertising Audience (in millions)"),
+         yaxis = list(title = "Social Platform"),
+         hoverinfo = "text",
+         hoverlabel = list(bgcolor = "yellow", font = list(color = "black")
+         )
+  ) %>%
+  config(displayModeBar = FALSE)
+
+```
+
+The graph above references the size of the social network advertising audience in Singapore. Let’s see some possible deductions we might be able to make based on this information. 
+
+### Twitter
+
+Twitter has the largest advertising audience in Singapore with 5.50 million users. This suggests that Twitter is a popular platform for advertisers to reach a broad audience in the country.
+
+### YouTube and LinkedIn
+
+YouTube and LinkedIn have substantial advertising audiences as well, with 5.08 million and 3.70 million users, respectively. This indicates that these platforms are also effective channels for reaching a diverse set of users, with YouTube being particularly popular for video content.
+
+### Facebook Platforms (Facebook, Instagram, and Messenger)
+
+Facebook, Instagram, and Facebook Messenger collectively have a significant advertising audience of 7.95 million users. This highlights the dominance of the Facebook ecosystem in Singapore, offering advertisers a range of platforms to engage with users.
+
+### Consideration for Advertisers
+
+Advertisers in Singapore can leverage the diverse user bases of these platforms to tailor their advertising strategies based on the target audience. Each platform caters to different demographics and interests, allowing advertisers to choose the most relevant channels for their campaigns.
+
+### Dynamic Landscape
+
+The popularity of social media platforms can change over time due to shifts in user behavior, the introduction of new features, or the emergence of new platforms. Advertisers should stay updated on trends to ensure the effectiveness of their campaigns.
+
+# Gender distribution of the social network advertising audience in Singapore
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+# Picture 5
+
+# Your data
+data_social_platform = data.frame(
+  Social_Platform = c("Snapchat", "Snapchat", "Instagram", "Instagram", "Facebook", "Facebook", "LinkedIn", "LinkedIn", "Facebook Messenger", "Facebook Messenger", "YouTube", "YouTube", "TikTok", "TikTok"),
+  Gender = rep(c("Male", "Female"), 7),
+  Proportion_Percentage = c(52.00, 48.00, 45.80, 54.20, 51.50, 48.50, 53.80, 46.20, 49.50, 50.50, 53.00, 47.00, 46.00, 54.00)
+)
+
+# Manually specify colors for each combination of Social Platform and Gender
+colors <- c("hotpink","#1338BE")
+
+# Create the interactive grouped bar chart with plot_ly
+plot_ly(data_social_platform, x = ~Social_Platform, y = ~Proportion_Percentage, color = ~Gender, type = "bar",colors = colors) %>%
+  layout(title = "Proportion of Platform by Gender",
+         xaxis = list(title = "Social Platform"),
+         yaxis = list(title = "Proportion (in %)"),
+         barmode = "group",
+         hoverlabel = list(bgcolor = "yellow", font = list(color = "black")
+         )
+  ) %>%
+  config(displayModeBar = FALSE)
+
+```
+
+The data above provides insights into the gender distribution on various social media platforms in Singapore. While the overall proportions are close to a 50-50 split, there are some notable differences across platforms.
+
+### Snapchat and TikTok Gender Split
+
+Snapchat and TikTok show a more distinct gender split. Snapchat has a slightly higher proportion of male users (52%), while TikTok has a higher proportion of female users (54%). This suggests that these platforms may have content or features that attract one gender more than the other.
+
+### LinkedIn
+
+LinkedIn has a higher proportion of male users (53.80%) compared to female users (46.20%). This aligns with the platform's historical association with professional networking, a field that has traditionally seen more male representation.
+
+### Facebook and Messenger
+
+Facebook and Facebook Messenger have relatively balanced gender distributions, with a slight tilt towards male users on Facebook (51.50%) and a slight tilt towards female users on Messenger (50.50%).
+
+### Instagram and YouTube
+
+Instagram has a higher proportion of female users (54.20%), while YouTube has a higher proportion of male users (53.00%). This indicates that visual-centric platforms like Instagram may have a higher appeal among female users, while YouTube's content may resonate more with male users.
+
+### Implications for Advertisers
+
+Advertisers can use this data to tailor their content and campaigns based on the gender distribution of the target audience on each platform. Understanding the gender dynamics on different platforms is crucial for crafting messaging and visuals that resonate with the specific demographics each platform attracts.
+
+### Diverse Audience Preferences
+
+The varied gender distribution across platforms highlights the diverse preferences and interests of users in Singapore. Advertisers should consider these nuances when planning and executing their social media campaigns.
+
+### Evolution of Platform Demographics
+
+The gender distribution on social media platforms can evolve over time as platforms introduce new features or shift their focus. Advertisers should stay attentive to these changes to ensure their strategies remain aligned with the evolving demographics of each platform.
+
+The data provides valuable insights into the gender distribution of social network advertising audiences in Singapore, offering advertisers the opportunity to refine their targeting strategies for different platforms and audiences.
+
+# Average time spent using online media in Singapore, by activity
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+# Picture 6 
+# as of Q3 2022 
+
+# Your data
+data_activity_time <- data.frame(
+  Social_Activity = c("Internet", "TV viewing (broadcast and streaming)", "Social media", "Reading press media", "Listening to music streaming services", "Using a game console", "Listening to podcasts"),
+  Time_Spent_Hours = c(6.59, 2.45, 2.13, 2.04, 1.32, 0.52, 0.51)
+)
+
+# Reorder factor levels based on Time_Spent_Hours in descending order
+data_activity_time$Social_Activity <- factor(data_activity_time$Social_Activity, levels = data_activity_time$Social_Activity[order(data_activity_time$Time_Spent_Hours)])
+
+# Create the interactive horizontal bar chart with plot_ly
+plot_ly(data_activity_time, x = ~Time_Spent_Hours, y = ~Social_Activity, type = "bar", orientation = 'h', marker = list(color = "green")) %>%
+  layout(title = "Time Spent Online on Social Activities",
+         xaxis = list(title = "Time Spent (in hours)"),
+         yaxis = list(title = "Social Activity"),
+         hoverinfo = "text",  
+         hoverlabel = list(bgcolor = "yellow", font = list(color = "black")
+         )
+  ) %>%
+  config(displayModeBar = FALSE)
+
+```
+
+### Internet Usage
+
+The data reveals that individuals in Singapore spend the most time on the internet, with an average of 6.59 hours per day. This underscores the central role of the internet in people's daily lives, likely encompassing various online activities.
+
+### Significant TV Viewing Time
+
+TV viewing, including both broadcast and streaming services, accounts for a substantial amount of time, with an average of 2.45 hours per day. This suggests that despite the growth of online platforms, traditional television remains a significant source of entertainment and information.
+
+### Social Media Engagement
+
+Social media usage takes up an average of 2.13 hours per day. While not as time-consuming as internet usage overall, it still represents a substantial portion of daily online activities. This highlights the importance of social media as a communication and content consumption platform.
+
+### Reading Press Media
+
+Reading press media, such as news websites or digital publications, accounts for an average of 2.04 hours per day. This indicates that individuals in Singapore allocate a significant amount of time to staying informed and consuming news content online.
+
+### Music Streaming and Podcast Listening
+
+Listening to music streaming services takes up 1.32 hours per day, indicating a substantial interest in online music consumption. Listening to podcasts follows closely, with an average of 0.51 hours per day. These activities represent the growing popularity of digital audio content.
+
+### Gaming Console Usage
+
+Using a game console takes up a relatively smaller amount of time, with an average of 0.52 hours per day. While not as time-intensive as other activities, it suggests a consistent interest in gaming among the population.
+
+### Implications for Content Creators and Advertisers
+
+The data provides valuable insights for content creators and advertisers in Singapore. With the internet being the primary platform for various activities, online content creation and digital advertising become crucial avenues for reaching and engaging with the audience.
+
+### Diverse Media Consumption Habits
+
+The diversity in time spent on different online activities reflects the varied media consumption habits of individuals in Singapore. Advertisers and content creators should consider this diversity when designing campaigns to ensure they resonate with the preferences of the target audience.
+
+### Shifting Media Landscape
+
+The data also indicates a shift in media consumption from traditional TV to online platforms. Advertisers may need to adapt their strategies to meet the changing preferences of consumers.
+
+### Conclusion
+
+The data illustrates the significant role of the internet in daily media consumption in Singapore, with diverse activities such as TV viewing, social media engagement, news reading, and digital audio content contributing to a rich and varied online experience.
+
+# Time spent on social media platforms per day in Singapore
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+# Picture 7 
+# as of Jan 2022
+
+# Your data
+data_time_spent <- data.frame(
+  Time_Interval = c("0-1 hour", "2-4 hours", "5-7 hours", "7+ hours"),
+  Time_Spent_Percentage = c(13.00, 52.00, 22.00, 13.00)
+)
+
+# Reverse the order of levels in the "Time_Interval" factor
+data_time_spent$Time_Interval <- factor(data_time_spent$Time_Interval, levels = rev(data_time_spent$Time_Interval))
+
+# Create the interactive stacked bar chart with plot_ly
+plot_ly(data_time_spent, x = ~Time_Spent_Percentage, y = ~Time_Interval, type = "bar", orientation = 'h', marker = list(color = c("#CE1141", "#FFF700", "green", "blue"))) %>%
+  layout(title = "Distribution of Time Spent on Social Media Websites",
+         xaxis = list(title = "Share of Respondents (in %)"),
+         yaxis = list(title = "Time Interval (Daily)"),
+         barmode = "stack") %>%
+  config(displayModeBar = FALSE)
+
+```
+
+### Majority Spend 2-4 Hours on Social Media
+
+The largest percentage of users, 52%, falls into the category of spending 2-4 hours on social media per day. This suggests that a significant portion of the population engages with social media platforms for a moderate amount of time.
+
+### Balanced Distribution Across Time Intervals
+
+The distribution of time spent on social media is relatively balanced, with 13% in each of the categories: 0-1 hour, 7+ hours, and 13% in the 5-7 hours category. This indicates that there is diversity in the usage patterns, and no single category dominates the landscape.
+
+### Moderate Engagement is the Norm
+
+The fact that a majority spend 2-4 hours on social media aligns with the idea that many people use these platforms for a mix of social interactions, content consumption, and information sharing without excessively long sessions.
+
+### Concerns about Excessive Use
+
+13% of users spending 7+ hours on social media per day raises considerations about potential negative impacts on productivity, mental health, and overall well-being. Excessive use may lead to issues such as social media addiction and reduced face-to-face interactions.
+
+### Implications for Social Media Platforms
+
+Social media platforms may use this data to understand user behavior and tailor their features to encourage moderate and balanced usage. Platforms might consider implementing features that promote healthy usage patterns and discourage excessive screen time.
+
+### Considerations for Advertisers
+
+Advertisers should consider the distribution of time spent on social media when planning campaigns. Knowing that the majority of users spend a moderate amount of time provides insights into the optimal window for engaging with the audience.
+
+### Educational Initiatives
+
+The data underscores the importance of educational initiatives about responsible social media usage. Both platforms and organizations can play a role in promoting awareness about healthy online habits and the potential pitfalls of excessive use.
+
+### Shifts in Usage Patterns Over Time
+
+Monitoring changes in these patterns over time is crucial. As social media evolves and users' habits change, understanding shifts in usage patterns can help platforms and stakeholders adapt their strategies.
+
+### Conclusion
+
+In conclusion, the data on time spent on social media in Singapore suggests a diverse distribution, with a significant portion of users engaging for a moderate amount of time. This information has implications for both social media platforms and advertisers, emphasizing the need for strategies that promote responsible and balanced usage.
+
+# The main reasons for using social media in Singapore in 2022
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+# Picture 8
+
+data_social_daily <- data.frame(
+  Activity = c(
+    "Keeping in touch with friends and family", "Filling spare time", "Reading news stories",
+    "Seeing what's being talked about", "Finding content", "Finding inspiration for things to do and buy",
+    "Watching live streams", "Seeing content from brands", "Posting about your life",
+    "Finding products to purchase", "Work-related networking or research",
+    "Following celebrities or influencers", "Avoiding missing out (FOMO)", "Watching or following sports",
+    "Finding like-minded communities"
+  ),
+  Percentage = c(
+    45.90, 36.70, 33.10, 30.20, 26.70, 25.30, 21.90, 21.40, 19.10, 18.60, 18.00, 17.30, 17.00, 16.00, 15.50
+  )
+)
+
+# Convert 'Activity' to an ordered factor with the correct levels
+data_social_daily$Activity <- factor(
+  data_social_daily$Activity,
+  levels = data_social_daily$Activity[order(data_social_daily$Percentage, decreasing = FALSE)]
+)
+
+# Create the interactive bar graph with plot_ly
+plot_ly(data_social_daily, x = ~Activity, y = ~Percentage, type = "bar", marker = list(color = "orange")) %>%
+  layout(title = "Main Reasons for Using Social Media in Singapore",
+         xaxis = list(title = "Reasons"),
+         yaxis = list(title = "Share of Respondents (in %)"),
+         xaxis = list(tickangle = -45),
+         hoverinfo = "text",  
+         hoverlabel = list(bgcolor = "lightblue", font = list(color = "black")
+         )
+  ) %>%
+  config(displayModeBar = FALSE)
+
+```
+
+There is quite a lot to unpack here. As we explore the reasons for using social media and the corresponding percentages, a nuanced narrative emerges, reflecting the diverse ways in which Singaporeans have integrated these platforms into their lives over time.
+
+### The Dominance of Social Connection 
+
+Keeping in touch with friends and family stands out as the primary motivation for social media use, with a substantial 45.90%. This underscores the pivotal role these platforms play in maintaining and nurturing personal relationships, forming a digital bridge between individuals.
+
+### Beyond Social Bonds 
+
+While social connection remains paramount, a significant 36.70% of users leverage social media to fill spare time. This suggests that these platforms serve not only as communication tools but also as sources of entertainment and leisure, reflecting a shift in their multifaceted utility.
+
+### The Rise of News Consumption 
+
+Reading news stories ranks third at 33.10%, revealing a growing trend of utilizing social media as a news source. This shift reflects a changing media landscape, where digital platforms play a central role in information dissemination and consumption.
+
+### Content Discovery and Inspiration 
+
+The data highlights a dual role for social media in content discovery, with 26.70% finding content and 25.30% seeking inspiration for activities and purchases. This points to the platforms' evolving function as not just communication tools but also as curated content hubs influencing lifestyle choices.
+
+### Evolving Brand Engagement 
+
+Seeing content from brands at 21.40% suggests an increasing role of social media in brand engagement and marketing. Brands are leveraging these platforms to connect with their audience, showcasing the evolution of social media into a powerful marketing and advertising channel.
+
+### Work and Professional Networking 
+
+Work-related networking or research at 18.00% indicates the emergence of social media as a professional tool. Beyond personal use, individuals are utilizing these platforms for work-related purposes, showcasing the evolving landscape of professional networking in the digital age.
+
+### Cultural Influences 
+
+Following celebrities or influencers (17.30%) and watching or following sports (16.00%) demonstrate the cultural influences embedded in social media use. Users engage with platforms not only for personal connections but also to stay abreast of cultural trends and influences.
+
+### Community Building 
+
+Finding like-minded communities at 15.50% highlights the role of social media in community building. Users seek out and participate in communities that align with their interests, fostering a sense of belonging and shared experiences.
+
+### Conclusion 
+
+The data on reasons for using social media in Singapore reveals a multifaceted landscape, where these platforms serve diverse purposes beyond mere social connection. From news consumption to entertainment, brand engagement to professional networking, the evolving nature of social media mirrors the dynamic digital tapestry woven by the people of Singapore. As the motivations for social media use diversify, so too does the impact of these platforms on the social, cultural, and professional fabric of the nation.
+
+# The most popular Youtube channels in Singapore, by number of video views (in billions)
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+# Picture 10 
+# As of Oct 2022 
+
+data <- data.frame(
+  entity = c("mingweirocks", "ONE Championship", "Doctor Tristan Peh", "Cartoon Network Asia", "Survival Builders", "iQIYI", "JianHao Tan", "radmiru", "Masti Tv - Hindi Stories", "Muse Asia"),
+  value = c(5.23, 2.68, 2.44, 2.31, 2.30, 2.25, 1.79, 1.79, 1.70, 1.60)
+)
+
+data$entity <- factor(data$entity, levels = data$entity[order(data$value, decreasing = TRUE)])
+
+plot_ly(data, x = ~entity, y = ~value, type = "bar", marker = list(color = "#1338BE")) %>%
+  layout(title = "Most Viewed Youtube Channels in Singapore",
+         xaxis = list(title = "Youtube Channel Name"),
+         yaxis = list(title = "Number of Views (in billions)"),
+         xaxis = list(tickangle = -45),
+         hoverinfo = "text",  
+         hoverlabel = list(bgcolor = "lightblue", font = list(color = "black")
+         )
+  ) %>%
+  config(displayModeBar = FALSE)
+
+
+
+```
+
+From this graph, we can catch a glimpse of how the YouTube scene in Singapore has witnessed a dynamic evolution, marked by the emergence of diverse content creators and channels that capture the attention of audiences both locally and globally. 
+
+### mingweirocks Dominates with 5.23 Billion Views 
+
+Topping the charts with a substantial 5.23 billion views, the channel "mingweirocks" stands out as a powerhouse in the Singaporean YouTube landscape. This suggests a strong audience resonance with the content offered by this creator, reflecting the diverse tastes of the local audience.
+
+### ONE Championship: A Sporting Sensation with 2.68 Billion Views 
+
+ONE Championship, with 2.68 billion views, underscores the global appeal of Singapore's sports and entertainment content. The significant viewership reflects the platform's success in not only capturing local audiences but also engaging a broader international fan base.
+
+### Educational Content Thrives 
+
+Channels like "Doctor Tristan Peh" and "Survival Builders" with 2.44 billion and 2.30 billion views, respectively, highlight the popularity of educational and informative content. This trend suggests a growing appetite for knowledge-sharing and skill-building content within the Singaporean audience.
+
+### Entertainment Giants: Cartoon Network Asia and iQIYI 
+
+Cartoon Network Asia and iQIYI, both with over 2 billion views, showcase the dominance of entertainment content in the digital landscape. The presence of global entertainment platforms among top Singaporean channels reflects the multicultural and diverse viewing preferences of the audience.
+
+### Local Content Creators Making Waves 
+
+The presence of local content creators like "JianHao Tan" and "radmiru" with 1.79 billion views each signifies the rise of homegrown talent. These creators contribute to the rich tapestry of content, resonating with local audiences while also garnering international attention.
+
+### Cultural Diversity: Muse Asia and Masti Tv - Hindi Stories 
+
+"Muse Asia" and "Masti Tv - Hindi Stories," with 1.60 billion and 1.70 billion views, respectively, highlight the significance of cultural diversity in content consumption. These channels cater to a multicultural audience, emphasizing the global nature of Singapore's digital landscape.
+
+### Conclusion 
+
+The total views of top YouTube channels in Singapore reveal a thriving and diverse digital ecosystem. From local content creators to global entertainment giants, educational channels to sports sensations, Singapore's YouTube landscape reflects the eclectic tastes and interests of its audience. As the digital wave continues to shape the content creation landscape, the dynamic interplay between local and global influences contributes to the evolving narrative of Singapore's digital journey.
+
+# The most popular Youtube channels in Singapore, by number of subscribers (in millions)
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+# Picture 11 
+# as of Oct 2022
+
+# Your updated data
+data <- data.frame(
+  entity = c("Survival Builder", "Mayajaal", "Masti Tv-Hindi Stories", "Primitive Survival Tool", "Jungle Survival", "Jadu Tv- Hindi Stories", "JianHao Tan", "PopCorn/- Funny Hindi Comedy Videos", "TAWHID AFRIDI", "Muse Asia"),
+  value = c(10.10, 9.48, 6.72, 6.26, 5.95, 5.62, 5.61, 5.55, 5.51, 5.50)
+)
+
+# Convert 'entity' to an ordered factor with the desired levels
+data$entity <- factor(data$entity, levels = data$entity[order(data$value, decreasing = TRUE)])
+
+# Create the interactive bar graph with plot_ly
+plot_ly(data, x = ~entity, y = ~value, type = "bar", marker = list(color = "#03AC13")) %>%
+  layout(title = "Most Subscribed YouTube Channels in Singapore",
+         xaxis = list(title = "Youtube Channel Name"),
+         yaxis = list(title = "Number of Subscribers (in millions)"),
+         xaxis = list(tickangle = -45),
+         hoverinfo = "text",  
+         hoverlabel = list(bgcolor = "#E0115F", font = list(color = "white")
+         )
+  ) %>%
+  config(displayModeBar = FALSE)
+
+```
+
+The graph above provides a fascinating glimpse into the diverse tapestry of content that captures the hearts and minds of audiences. It showcases the evolving landscape of social media in Singapore over time.
+
+### Survival Builder Claims the Throne with 10.10 Million Subscribers 
+
+"Survival Builder" stands as the reigning champion with an impressive 10.10 million subscribers, underscoring the widespread appeal of survival-themed content. This suggests a significant interest in outdoor and survivalist genres among the Singaporean audience.
+
+### Mayajaal and Masti Tv-Hindi Stories Trail Closely 
+
+"Mayajaal" and "Masti Tv-Hindi Stories" with 9.48 million and 6.72 million subscribers, respectively, exemplify the diverse interests of the audience. While "Mayajaal" caters to a broad audience, "Masti Tv-Hindi Stories" reflects the popularity of Hindi storytelling content within the Singaporean digital landscape.
+
+### Primitive Survival Tool and Jungle Survival Find a Niche 
+
+With 6.26 million and 5.95 million subscribers, "Primitive Survival Tool" and "Jungle Survival" carve a niche in the survival and outdoors genre. Their substantial subscriber counts indicate a dedicated fan base interested in primitive skills and jungle exploration.
+
+### Local Content Creator JianHao Tan Commands 5.61 Million Subscribers 
+
+"JianHao Tan," with 5.61 million subscribers, reinforces the impact of local content creators on the Singaporean digital scene. His substantial subscriber count reflects the popularity of homegrown talent and the ability to resonate with a broad audience.
+
+### PopCorn/- Funny Hindi Comedy Videos Entertains with 5.55 Million Subscribers 
+
+"PopCorn/- Funny Hindi Comedy Videos" with 5.55 million subscribers brings humor to the forefront, showcasing the significance of comedic content in the digital realm. This underscores the diverse array of entertainment preferences within the Singaporean audience.
+
+### Muse Asia's Cultural Appeal with 5.50 Million Subscribers 
+
+"Muse Asia" with 5.50 million subscribers reflects the cultural diversity embraced by Singaporeans. The channel's popularity suggests an interest in Asian entertainment, spanning diverse genres and cultural influences.
+
+### TAWHID AFRIDI's 5.51 Million Subscribers 
+
+"TAWHID AFRIDI" with 5.51 million subscribers exemplifies the global reach of Singaporean content creators. The channel's substantial subscriber count reflects the ability of creators to transcend geographical boundaries and attract a diverse international audience.
+
+### Conclusion 
+
+The subscriber counts of top YouTube channels in Singapore unveil a captivating narrative of diverse interests and preferences. From survivalist adventures to Hindi storytelling, local comedy, and global entertainment, the Singaporean audience engages with a broad spectrum of content. As the subscriber counts continue to climb, the story of social media evolution in Singapore unfolds as a testament to the rich and dynamic content landscape that reflects the evolving tastes and cultural diversity of its audience.
+
+
+# OVERALL SUMMARY 
+
+Now that the data has been reviewed, it will be good to end off by discussing the implications and uses of this information going forward, for various parties. 
+
+## Advertisers and Marketers 
+
+Advertisers can leverage the data on social media usage, gender distribution, and advertising audiences to refine their strategies and tailor campaigns for specific platforms and demographics.
+The popularity of YouTube channels offers advertising opportunities, with individual creators and diverse content themes providing varied avenues for brand engagement.
+
+## Content Creators and Influencers 
+
+Individual content creators have significant influence, as demonstrated by popular YouTube channels. Creators can use this data to understand audience preferences and tailor their content accordingly.
+Collaboration opportunities exist for content creators to tap into diverse audience bases and create cross-cultural content.
+
+## Social Media Platforms 
+
+Social media platforms can use the data on user behavior, time spent, and reasons for usage to enhance user experience and introduce features that align with evolving preferences.
+Platforms can capitalize on the popularity of specific content themes, such as survival and storytelling, by promoting related content and encouraging creator diversity.
+
+## Businesses and Brands 
+
+Businesses can use social media as a crucial tool for brand engagement, customer interaction, and product promotion. Understanding the motivations behind social media usage helps tailor content for maximum impact.
+The data on advertising audience size and gender distribution assists businesses in refining their targeting strategies for different platforms.
+
+## General Users and Consumers 
+
+General users can benefit from a richer and more diverse social media experience. The data provides insights into how individuals in Singapore use social media for personal connections, entertainment, information, and cultural engagement.
+Awareness of trends and popular content creators allows users to explore a variety of content that aligns with their interests.
+
+
+# References 
+
+Howe, S. (2023, March 29). Social Media Statistics in Singapore [Updated 2023]. Meltwater. 
+
+[https://www.meltwater.com/en/blog/social-media-statistics-singapore](https://www.meltwater.com/en/blog/social-media-statistics-singapore)
+
+NUS Libraries: Library Proxy: Login. (n.d.). Login.libproxy1.Nus.edu.sg. Retrieved November 24, 2023, 
+
+[https://www-statista-com.libproxy1.nus.edu.sg/study/63698/social-media-in-singapore/](https://www-statista-com.libproxy1.nus.edu.sg/study/63698/social-media-in-singapore/)
